@@ -1,16 +1,27 @@
 <template lang="jade">
 .tree-panel
   .wrap
-    .json-tree
+    .not-expandable(v-if="!canExpand", v-text="cantExpandText")
+    .json-tree(v-if="canExpand")
       json-item(v-for="(key, val) of json", :key="key", :val="val")
+    .tag Parsed
     .error(v-if="error", transition="fade") Parse Error
 </template>
 
 <script>
 import JsonItem from './JsonItem'
+import { expandable, cantExpandText } from '../utils'
 
 export default {
   components: { JsonItem },
+  computed: {
+    canExpand () {
+      return expandable(this.json)
+    },
+    cantExpandText () {
+      return cantExpandText(this.json)
+    }
+  },
   vuex: {
     getters: {
       json (state) {
@@ -50,7 +61,16 @@ export default {
     display flex
     justify-content center
     align-items center
-    font-size 20px
+    font-size 30px
+  .tag
+    position absolute
+    top 0
+    right 0
+    color white
+    background #42b983
+    padding 0 1em
+    border-top-right-radius 5px
+    border-bottom-left-radius 5px
   .fade-transition
     transition all .3s
     opacity 1

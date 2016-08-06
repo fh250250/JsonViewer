@@ -1,5 +1,5 @@
 export function parseError ({ dispatch }) {
-  dispatch('UPDATE_JSON', '{}')
+  dispatch('UPDATE_JSON', '""')
   dispatch('UPDATE_ERROR', true)
 }
 

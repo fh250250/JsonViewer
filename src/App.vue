@@ -16,6 +16,7 @@ export default {
 </script>
 
 <style src="normalize.css" lang="css"></style>
+<style src="./assets/ionicons/ionicons.css" lang="css"></style>
 <style lang="stylus">
 html
 body
