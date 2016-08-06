@@ -1,0 +1,21 @@
+language: node_js
+node_js: node
+
+install:
+  - npm install
+
+script:
+  - npm run build
+
+after_success:
+  - cd dist
+  - git init
+  - git config user.name "Gasper Duan"
+  - git config user.email "duanpengyuan@qq.com"
+  - git add .
+  - git commit -m "Update Github Pages"
+  - git push --force --quiet "https://${GH_TOKEN}@github.com/fh250250/JsonViewer.git" master:gh-pages
+
+branches:
+  only:
+    - master
