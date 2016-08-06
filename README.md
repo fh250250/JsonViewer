@@ -1,4 +1,5 @@
 # Json Viewer
+[![Build Status](https://travis-ci.org/fh250250/JsonViewer.svg?branch=master)](https://travis-ci.org/fh250250/JsonViewer)
 
 > A JSON Viewer
 
