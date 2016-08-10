@@ -17,11 +17,12 @@ export default {
 
 <style src="normalize.css" lang="css"></style>
 <style src="./assets/ionicons/ionicons.css" lang="css"></style>
+<style src="./assets/source-code-pro/index.css" lang="css"></style>
 <style lang="stylus">
 html
 body
   height 100%
-  font-family monospace
+  font-family 'Source Code Pro', monospace
   font-size 14px
   color #333
   line-height 1.6
